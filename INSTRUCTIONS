@@ -1,0 +1,20 @@
+INSTRUCTIONS:
+ Running (on Visual Studio):
+  1. Open "Project" folder.
+  2. Open "325673093" folder.
+  3. Click the TestWorkersNetwork.sin .
+  4. Right-Click on the Solution in Solution Explorer tab.
+  5. Add -> Existing Website.
+  6. Select and add "wsGame" folder.
+And now the Website is ready to run.
+
+To sign-in using pre-prepared accounts, you can use the following accounts:
+Worker: 
+    email: worker@gmail.com
+    pwd: 654
+Customer: 
+    email: customer@gmail.com
+    pwd: 321
+Admin: 
+    email: admin@gmail.com
+    pwd: 987
