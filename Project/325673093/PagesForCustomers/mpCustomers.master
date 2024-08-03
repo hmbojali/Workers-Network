@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpCustomers.master.cs" Inherits="PagesForCustomers_mpCustomers" %>
+
+<%@ Register Src="~/UserControls/wucCustomer.ascx" TagPrefix="MyUserControls" TagName="wucCustomer" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#FFDD77">
+    <form id="form1" runat="server">
+        <MyUserControls:wucCustomer runat="server" ID="wucCustomer" />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

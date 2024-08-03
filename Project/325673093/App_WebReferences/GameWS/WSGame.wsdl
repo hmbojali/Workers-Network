@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="player" type="tns:Player" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Player">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighScore" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Attempts" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPlayerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExistPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistPlayerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAttempt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="player" type="tns:Player" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAttemptResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewHighScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewHighScoreResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPlayerByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerByEmailResult" type="tns:Player" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerByIDResult" type="tns:Player" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayer" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:ExistPlayer" />
+  </wsdl:message>
+  <wsdl:message name="ExistPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAttemptSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAttempt" />
+  </wsdl:message>
+  <wsdl:message name="SetAttemptSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAttemptResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewHighScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:NewHighScore" />
+  </wsdl:message>
+  <wsdl:message name="NewHighScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:NewHighScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerByEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerByID" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerByIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSGameSoap">
+    <wsdl:operation name="AddPlayer">
+      <wsdl:input message="tns:AddPlayerSoapIn" />
+      <wsdl:output message="tns:AddPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistPlayer">
+      <wsdl:input message="tns:ExistPlayerSoapIn" />
+      <wsdl:output message="tns:ExistPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAttempt">
+      <wsdl:input message="tns:SetAttemptSoapIn" />
+      <wsdl:output message="tns:SetAttemptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewHighScore">
+      <wsdl:input message="tns:NewHighScoreSoapIn" />
+      <wsdl:output message="tns:NewHighScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByEmail">
+      <wsdl:input message="tns:GetPlayerByEmailSoapIn" />
+      <wsdl:output message="tns:GetPlayerByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByID">
+      <wsdl:input message="tns:GetPlayerByIDSoapIn" />
+      <wsdl:output message="tns:GetPlayerByIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSGameSoap" type="tns:WSGameSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPlayer">
+      <soap:operation soapAction="http://tempuri.org/AddPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistPlayer">
+      <soap:operation soapAction="http://tempuri.org/ExistPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAttempt">
+      <soap:operation soapAction="http://tempuri.org/SetAttempt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewHighScore">
+      <soap:operation soapAction="http://tempuri.org/NewHighScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByEmail">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByID">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSGameSoap12" type="tns:WSGameSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPlayer">
+      <soap12:operation soapAction="http://tempuri.org/AddPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistPlayer">
+      <soap12:operation soapAction="http://tempuri.org/ExistPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAttempt">
+      <soap12:operation soapAction="http://tempuri.org/SetAttempt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewHighScore">
+      <soap12:operation soapAction="http://tempuri.org/NewHighScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByEmail">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByID">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSGame">
+    <wsdl:port name="WSGameSoap" binding="tns:WSGameSoap">
+      <soap:address location="http://localhost:62628/WSGame.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSGameSoap12" binding="tns:WSGameSoap12">
+      <soap12:address location="http://localhost:62628/WSGame.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

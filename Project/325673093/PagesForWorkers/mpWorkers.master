@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpWorkers.master.cs" Inherits="PagesForWorkers_mpWorkers" %>
+
+<%@ Register Src="~/UserControls/wucWorker.ascx" TagPrefix="MyUserControls" TagName="wucWorker" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#FFDD77">
+    <form id="form1" runat="server">
+        <MyUserControls:wucWorker runat="server" id="wucWorker" />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
