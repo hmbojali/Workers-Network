@@ -212,9 +212,9 @@ public class Customer
                 DateTime date;
                 string strDate = ds.Tables[0].Rows[0]["dateOfBirth"].ToString();
 
-                month = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
-                strDate = strDate.Substring(strDate.IndexOf("/") + 1);
                 day = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
+                strDate = strDate.Substring(strDate.IndexOf("/") + 1);
+                month = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
                 strDate = strDate.Substring(strDate.IndexOf("/") + 1);
                 year = int.Parse(strDate.Substring(0, strDate.IndexOf(" ")));
 
@@ -249,9 +249,9 @@ public class Customer
                 DateTime date;
                 string strDate = ds.Tables[0].Rows[0]["dateOfBirth"].ToString();
 
-                month = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
-                strDate = strDate.Substring(strDate.IndexOf("/") + 1);
                 day = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
+                strDate = strDate.Substring(strDate.IndexOf("/") + 1);
+                month = int.Parse(strDate.Substring(0, strDate.IndexOf("/")));
                 strDate = strDate.Substring(strDate.IndexOf("/") + 1);
                 year = int.Parse(strDate.Substring(0, strDate.IndexOf(" ")));
 
